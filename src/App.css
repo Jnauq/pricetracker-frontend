@@ -14,3 +14,7 @@ li:not(:last-child) {
 button:hover {
   cursor: pointer;
 }
+
+a:link, a:visited {
+  color: #277eee;
+}

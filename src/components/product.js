@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Product extends Component {
-    
-    render() {
-        return (
-            <li className="product" style={productStyle}>
-                <button id="li-removeBtn" style={buttonStyle}><em><strong>X</strong></em></button>
-                <div className="li-container" style={containerStyle}>
-                    <div className="li-left" style={leftStyle}>
-                        <img src={this.props.data.url} style={imageStyle}></img>
-                    </div>
-                    <div className="li-right" style={rightStyle}>
-                        <h3 className="li-head">{this.props.data.name}</h3>
-                        <p className="li-sub">{this.props.data.id}</p>
-                        <h4 className="li-price" style={priceStyle}>{this.props.data.price}</h4>
-                    </div>
+const Product = (props) => {
+
+    return (
+        <li className="product" style={productStyle}>
+            <button id="li-removeBtn" style={buttonStyle}><em><strong>X</strong></em></button>
+            <div className="li-container" style={containerStyle}>
+                <div className="li-left" style={leftStyle}>
+                    <img src={props.data.imgUrl} style={imageStyle} alt={props.data.id}></img>
                 </div>
-            </li>
-        );
-    }
+                <div className="li-right" style={rightStyle}>
+                    <h3 className="li-head">{props.data.prodName}</h3>
+                    <h4 className="li-price" style={priceStyle}>{props.data.price}</h4>
+                    <p className="li-sub">{props.data.stock}</p>
+                    <a className="li-sub" href={props.data.prodUrl}>{props.data.prodUrl}</a>
+                </div>
+            </div>
+        </li>
+    );
 }
 
 const productStyle = {
