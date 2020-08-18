@@ -26,6 +26,7 @@ class ProductList extends Component {
         const { products, errorMsg } = this.state
         return (
             <div>
+                <button style={buttonStyle}><strong>Update List</strong></button>
                 <div className="productwrapper" style={listWrapperStyle}>
                     <ul className="listwrapper" style={listStyle}>
                     {
@@ -53,6 +54,17 @@ const listWrapperStyle = {
 const listStyle = {
     width: '100vw',
     listStyleType: 'none',
+}
+
+const buttonStyle = {
+    height: '3em',
+    marginLeft: '2em',
+    paddingLeft: '1em',
+    paddingRight: '1em',
+    backgroundColor: '#ccc',
+    color: '#555',
+    border: '3px solid #777',
+    borderRadius: '3px',
 }
 
 export default ProductList;
