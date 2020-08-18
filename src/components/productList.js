@@ -47,8 +47,8 @@ const listWrapperStyle = {
     display: 'flex',
     justifyContent: 'center',
     marginTop: '2em',
-    marginLeft: 'calc(100vw - 100vw*0.9)',
-    marginRight: 'calc(100vw - 100vw*0.9)',
+    marginLeft: 'calc(100vw*0.1)',
+    marginRight: 'calc(100vw*0.1)',
 }
 
 const listStyle = {
@@ -58,12 +58,13 @@ const listStyle = {
 
 const buttonStyle = {
     height: '3em',
-    marginLeft: '2em',
+    marginTop: '2em',
+    marginLeft: 'calc(100vw*0.5 - 4em)',
     paddingLeft: '1em',
     paddingRight: '1em',
     backgroundColor: '#ccc',
     color: '#555',
-    border: '3px solid #777',
+    border: '3px solid #999',
     borderRadius: '3px',
 }
 

@@ -11,7 +11,9 @@ const Product = (props) => {
                 </div>
                 <div className="li-right" style={rightStyle}>
                     <h3 className="li-head">{props.data.prodName}</h3>
-                    <h4 className="li-price" style={priceStyle}>{props.data.price}</h4>
+                    <h4 className="li-price" style={priceStyle}>
+                        {props.data.price ===  "null" ? " " : props.data.price }
+                    </h4>
                     <p className="li-sub">{props.data.stock}</p>
                     <a className="li-sub" href={props.data.prodUrl}>{props.data.prodUrl}</a>
                 </div>
