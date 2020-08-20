@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
 
 class NewItem extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      newUrl: ''
+    }
+  }
+
+  handleUrlChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleAdd(this.state.newUrl)
+    this.setState({ newUrl: '' })
+  }
   
   render() {
-
     return (
       <div className="newItemWrapper">
-        <form className="newForm" style={formStyle} >
-            <input type="text" id="addInput" placeholder="Insert Amazon product url..." style={inputStyle} />
-            <button id="addBtn" style={buttonStyle}><strong>Add</strong></button>
+        <form className="newForm" style={formStyle} onSubmit={this.onSubmit}>
+            <input type="text" name="newUrl" value={this.state.newUrl} onChange={this.handleUrlChange} style={inputStyle} />
+            <button type="submit" style={buttonStyle}>Submit</button>
         </form>
       </div>
     );
   }
-
 }
+
 
 const formStyle = {
   display: 'flex',

@@ -4,7 +4,7 @@ const Product = (props) => {
 
     return (
         <li className="product" style={productStyle}>
-            <button id="li-removeBtn" style={buttonStyle}><em><strong>X</strong></em></button>
+            <button id="li-removeBtn" style={buttonStyle} onClick={() => props.handleRemove(props.data.id)}><em><strong>X</strong></em></button>
             <div className="li-container" style={containerStyle}>
                 <div className="li-left" style={leftStyle}>
                     <img src={props.data.imgUrl} style={imageStyle} alt={props.data.id}></img>
@@ -12,7 +12,7 @@ const Product = (props) => {
                 <div className="li-right" style={rightStyle}>
                     <h3 className="li-head">{props.data.prodName}</h3>
                     <h4 className="li-price" style={priceStyle}>
-                        {props.data.price ===  "null" ? " " : props.data.price }
+                        {props.data.price ===  "null" ? "" : props.data.price }
                     </h4>
                     <p className="li-sub">{props.data.stock}</p>
                     <a className="li-sub" href={props.data.prodUrl}>{props.data.prodUrl}</a>

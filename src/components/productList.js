@@ -1,47 +1,26 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React from 'react';
 import Product from './product'
 
-class ProductList extends Component {
+const ProductList = (props) => {
 
-    constructor() {
-        super()
-        this.state = {
-            products : [],
-            errorMsg : ''
-        }
-    }
+    return (
+        <div>
+            <button style={buttonStyle} onClick={props.handleUpdate}>Update List</button>
+            <div className="productwrapper" style={listWrapperStyle}>
+                <ul className="listwrapper" style={listStyle}>
+                {
+                    props.products.length ?
+                    props.products.map((element) => (<Product key={element.id} data={element} handleRemove={props.handleRemove}/>)) : null
+                }
 
-    componentDidMount() {
-        axios.get('https://amazon-api-082020.herokuapp.com/api/products')
-            .then(response => {
-                this.setState({ products: response.data })
-            })
-            .catch(error => {
-                this.setState({ errorMsg: 'Error retrieving data' })
-            })
-    }
-  
-    render() {
-        const { products, errorMsg } = this.state
-        return (
-            <div>
-                <button style={buttonStyle}><strong>Update List</strong></button>
-                <div className="productwrapper" style={listWrapperStyle}>
-                    <ul className="listwrapper" style={listStyle}>
-                    {
-                        products.length ?
-                        products.map((element) => (<Product key={element.id} data={element}/>)) : null
-                    }
-
-                    { errorMsg ? <div>{errorMsg}</div> : null }
-                    </ul>
-                </div>
+                { props.errorMsg ? <div>{props.errorMsg}</div> : null }
+                </ul>
             </div>
-        );
-    }
-
+        </div>
+    );
 }
+
+
 
 const listWrapperStyle = {
     display: 'flex',
