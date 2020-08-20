@@ -58,7 +58,11 @@ class App extends Component {
     return (
       <div className="app">
         <AddItem handleAdd={this.handleAdd}/>
-        <ProdList products={this.state.products} error={this.state.errorMsg} handleRemove={this.handleRemove} handleUpdate={this.handleUpdate}/>
+        <ProdList 
+          products={this.state.products} 
+          error={this.state.errorMsg} 
+          handleRemove={this.handleRemove} 
+          handleUpdate={this.handleUpdate}/>
       </div>
     );
   }

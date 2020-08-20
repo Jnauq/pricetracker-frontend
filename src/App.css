@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #eee;
+}
+
 li:not(:last-child) {
   padding-top: 1em;
   padding-bottom: 1em;

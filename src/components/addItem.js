@@ -5,7 +5,7 @@ class NewItem extends Component {
   constructor() {
     super()
     this.state = {
-      newUrl: ''
+      newUrl: '',
     }
   }
 
@@ -23,7 +23,11 @@ class NewItem extends Component {
     return (
       <div className="newItemWrapper">
         <form className="newForm" style={formStyle} onSubmit={this.onSubmit}>
-            <input type="text" name="newUrl" value={this.state.newUrl} onChange={this.handleUrlChange} style={inputStyle} />
+            <input type="text" name="newUrl" 
+              style={inputStyle}
+              value={this.state.newUrl} 
+              placeholder="Insert amazon product url..."
+              onChange={this.handleUrlChange} />
             <button type="submit" style={buttonStyle}>Submit</button>
         </form>
       </div>
@@ -50,11 +54,12 @@ const inputStyle = {
 const buttonStyle = {
   fontSize: 'inherit',
   height: '3em',
-  width: '4em',
-  backgroundColor: '#11bb11',
-  color: '#eee',
-  border: '3px solid #119911',
-  borderRadius: '5px'
+  backgroundColor: '#ccc',
+  color: '#555',
+  border: '3px solid #999',
+  borderRadius: '5px',
+  paddingLeft: '1em',
+  paddingRight: '1em',
 }
 
 export default NewItem;

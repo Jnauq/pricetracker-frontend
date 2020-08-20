@@ -24,7 +24,7 @@ const Product = (props) => {
 
 const productStyle = {
     padding: '0.75em',
-    backgroundColor: '#eee',
+    backgroundColor: '#fff',
 }
 
 const containerStyle = {
@@ -59,7 +59,7 @@ const priceStyle = {
 
 const buttonStyle = {
     height: '2.5em',
-    paddingLeft: '1em',
+    paddingLeft: '0.85em',
     paddingRight: '1em',
     backgroundColor: '#d55',
     color: '#eee',
