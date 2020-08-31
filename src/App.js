@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://amazon-api-082020.herokuapp.com/api/products')
+    axios.get('http://localhost:5050/api/products')
     .then(response => {
         this.setState({ products: response.data })
     })
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   handleUpdate = () => {
-    axios.get('https://amazon-api-082020.herokuapp.com/api/update')
+    axios.get('http://localhost:5050/api/update')
     .then( response => {
         this.setState({ products: response.data })
     })
@@ -36,7 +36,7 @@ class App extends Component {
 
   handleRemove = (id) => {
     this.setState({ products: [...this.state.products.filter(product => product.id !== id)] })
-    axios.delete(`https://amazon-api-082020.herokuapp.com/api/remove/${id}`)
+    axios.delete(`http://localhost:5050/api/remove/${id}`)
     .then( response => {
         this.setState({ products: response.data })
     })
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   handleAdd = (url) => {
-    axios.post('https://amazon-api-082020.herokuapp.com/api/addNew', { prodUrl: `${url}` })
+    axios.post('http://localhost:5050/api/addNew', { prodUrl: `${url}` })
     .then( response => {
         this.setState({ products: response.data })
     })
