@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a6a70e92bd6d7d092360ab418ee3f73",
+    "revision": "9524a62195e244413fcd8f1e07c957a1",
     "url": "/pricetracker-frontend/index.html"
   },
   {
-    "revision": "d94510ed83f975eb5838",
+    "revision": "6b2dc9327f2f3439c864",
     "url": "/pricetracker-frontend/static/css/main.54a37104.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pricetracker-frontend/static/js/2.3da60b1d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d94510ed83f975eb5838",
-    "url": "/pricetracker-frontend/static/js/main.6ff2e151.chunk.js"
+    "revision": "6b2dc9327f2f3439c864",
+    "url": "/pricetracker-frontend/static/js/main.e6dde4d6.chunk.js"
   },
   {
     "revision": "d4215ab0fcd9f2b3f379",
