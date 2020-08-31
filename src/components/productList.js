@@ -1,16 +1,20 @@
 import React from 'react';
 import Product from './product'
+import Spinner from './spinner'
 
 const ProductList = (props) => {
 
     return (
         <div>
-            <button style={buttonStyle} onClick={props.handleUpdate}>Update List</button>
+            {
+                props.products.length ?
+                <button style={buttonStyle} onClick={props.handleUpdate}>Fetch Latest Product Info</button> : null
+            }
             <div className="productwrapper" style={listWrapperStyle}>
                 <ul className="listwrapper" style={listStyle}>
                 {
                     props.products.length ?
-                    props.products.map((element) => (<Product key={element.id} data={element} handleRemove={props.handleRemove}/>)) : null
+                    props.products.map((element) => (<Product key={element.id} data={element} handleRemove={props.handleRemove}/>)) : <Spinner />
                 }
 
                 { props.errorMsg ? <div>{props.errorMsg}</div> : null }
@@ -41,9 +45,9 @@ const buttonStyle = {
     marginLeft: 'calc(100vw*0.5 - 4em)',
     paddingLeft: '1em',
     paddingRight: '1em',
-    backgroundColor: '#ccc',
-    color: '#555',
-    border: '3px solid #999',
+    backgroundColor: '#af799f',
+    color: '#eee',
+    border: '3px solid #af67af',
     borderRadius: '3px',
 }
 

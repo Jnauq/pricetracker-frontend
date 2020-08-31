@@ -28,7 +28,7 @@ class NewItem extends Component {
               value={this.state.newUrl} 
               placeholder="Insert amazon product url..."
               onChange={this.handleUrlChange} />
-            <button type="submit" style={buttonStyle}>Submit</button>
+            <button type="submit" style={buttonStyle}>Add To List</button>
         </form>
       </div>
     );
@@ -54,9 +54,9 @@ const inputStyle = {
 const buttonStyle = {
   fontSize: 'inherit',
   height: '3em',
-  backgroundColor: '#ccc',
-  color: '#555',
-  border: '3px solid #999',
+  backgroundColor: '#82aa9f',
+  color: '#eee',
+  border: '3px solid #82ac9f',
   borderRadius: '5px',
   paddingLeft: '1em',
   paddingRight: '1em',

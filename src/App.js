@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   handleRemove = (id) => {
+    this.setState({ products: [...this.state.products.filter(product => product.id !== id)] })
     axios.delete(`https://amazon-api-082020.herokuapp.com/api/remove/${id}`)
     .then( response => {
         this.setState({ products: response.data })
