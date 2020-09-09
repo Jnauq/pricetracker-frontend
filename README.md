@@ -7,5 +7,7 @@ Backend api code can be found
 
 https://github.com/Jnauq/pricetracker-api
 
-~~Api is hosted on heroku~~
-Currently trying to debug why scrapping works locally but not on Heroku.
+Api is hosted on heroku
+
+https://amazon-api-82020.herokuapp.com
+
