@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pricetracker-frontend/precache-manifest.61efa5432bc6dfd517311b40938c4542.js"
+  "/pricetracker-frontend/precache-manifest.14f0186c98fb953ee09863a4a954f993.js"
 );
 
 self.addEventListener('message', (event) => {
