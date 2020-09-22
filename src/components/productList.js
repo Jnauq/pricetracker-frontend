@@ -7,14 +7,14 @@ const ProductList = (props) => {
     return (
         <div>
             {
-                props.products.length ?
-                <button style={buttonStyle} onClick={props.handleUpdate}>Fetch Latest Product Info</button> : null
+                props.isBusy ?
+                <Spinner /> : <button style={buttonStyle}  onClick={props.handleUpdate}>Fetch Latest Product Info</button>
             }
             <div className="productwrapper" style={listWrapperStyle}>
                 <ul className="listwrapper" style={listStyle}>
                 {
                     props.products.length ?
-                    props.products.map((element) => (<Product key={element.id} data={element} handleRemove={props.handleRemove}/>)) : <Spinner />
+                    props.products.map((element) => (<Product key={element.id} data={element} handleRemove={props.handleRemove}/>)) : null
                 }
 
                 { props.errorMsg ? <div>{props.errorMsg}</div> : null }

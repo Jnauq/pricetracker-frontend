@@ -11,13 +11,14 @@ class App extends Component {
     this.state = {
         products : [],
         errorMsg : '',
+        requesting : true,
     }
   }
 
   componentDidMount() {
     axios.get('https://amazon-api-82020.herokuapp.com/api/products')
     .then(response => {
-        this.setState({ products: response.data })
+        this.setState({ products: response.data, requesting: false })
     })
     .catch(error => {
         this.setState({ errorMsg: 'Error retrieving data' })
@@ -25,9 +26,10 @@ class App extends Component {
   }
 
   handleUpdate = () => {
+    this.setState({ requesting: true })
     axios.get('https://amazon-api-82020.herokuapp.com/api/update')
     .then( response => {
-        this.setState({ products: response.data })
+        this.setState({ products: response.data, requesting: false })
     })
     .catch(error => {
         this.setState({ errorMsg: 'Error retrieving data' })
@@ -46,9 +48,10 @@ class App extends Component {
   }
 
   handleAdd = (url) => {
+    this.setState({ requesting: true })
     axios.post('https://amazon-api-82020.herokuapp.com/api/addNew', { prodUrl: `${url}` })
     .then( response => {
-        this.setState({ products: response.data })
+        this.setState({ products: response.data, requesting: false })
     })
     .catch(error => {
         this.setState({ errorMsg: 'Error adding data' })
@@ -58,10 +61,13 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <AddItem handleAdd={this.handleAdd}/>
+        <AddItem
+          isBusy={this.state.requesting}
+          handleAdd={this.handleAdd}/>
         <ProdList 
           products={this.state.products} 
           error={this.state.errorMsg} 
+          isBusy={this.state.requesting}
           handleRemove={this.handleRemove} 
           handleUpdate={this.handleUpdate}/>
       </div>

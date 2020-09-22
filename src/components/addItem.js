@@ -28,7 +28,10 @@ class NewItem extends Component {
               value={this.state.newUrl} 
               placeholder="Insert amazon product url..."
               onChange={this.handleUrlChange} />
-            <button type="submit" style={buttonStyle}>Add To List</button>
+            {
+              this.props.isBusy ?
+              null : <button type="submit" style={buttonStyle}>Add To List</button>
+            }
         </form>
       </div>
     );
